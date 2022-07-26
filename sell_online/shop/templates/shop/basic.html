@@ -1,0 +1,437 @@
+{% load static %}
+
+<html lang="en">
+
+<head>
+    <title> {% block title %} {% endblock title %} </title>
+    <style>
+        .hello-msg {
+            padding:5px;
+            text-decoration: none;
+            color: black;
+            font-size: 17px;
+        }
+
+        .overflow {
+            overflow-y: hidden;
+        }
+
+        .link {
+            text-decoration: none;
+            margin-left: 10px;
+            color: black;
+        }
+
+        .navbar {
+            background-color: transparent;
+            height: 90px;
+        }
+
+        .nav-item {
+            margin-right: 20px;
+        }
+
+        .footer {
+            background-color: #f6f6f6;
+        }
+
+        .footertext {
+            color: black;
+        }
+         
+
+        .icons {
+            margin-top: 1.2rem;
+        }
+
+        .icons .facebook-icon {
+            margin-right: 0.3rem;
+            background-color: #3C5B9B;
+            text-decoration: none;
+            color: #fff;
+            padding: 0.4rem 0.8rem;
+            border-radius: 3px;
+        }
+
+        .icons .twitter-icon {
+            margin-right: 0.3rem;
+            background-color: #40C1DF;
+            text-decoration: none;
+            color: #fff;
+            padding: 0.4rem 0.8rem;
+            border-radius: 3px;
+        }
+
+        .icons .instagram-icon {
+            margin-right: 0.3rem;
+            background-color: #C619B8;
+            text-decoration: none;
+            color: #fff;
+            padding: 0.4rem 0.8rem;
+            border-radius: 3px;
+        }
+
+        .icons .youtube-icon {
+            margin-right: 0.3rem;
+            background-color: #FF0E00;
+            text-decoration: none;
+            color: #fff;
+            padding: 0.4rem 0.8rem;
+            border-radius: 3px;
+        }
+
+        .icons .pinterest-icon {
+            margin-right: 0.3rem;
+            background-color: #C72982;
+            text-decoration: none;
+            color: #fff;
+            padding: 0.4rem 0.8rem;
+            border-radius: 3px;
+        }
+
+        .app-img {
+            margin-top: 1.2rem;
+            display: flex;
+        }
+
+        .phone {
+            margin: 1rem 0;
+            background-color: #1F2024;
+            padding: 1rem;
+            display: flex;
+            border: 1px solid #FCB200;
+            border-radius: 2px;
+        }
+
+        .text {
+            color: #FCB200;
+        }
+
+
+
+
+
+        .footer {
+            background: #1F2024;
+        }
+
+        .footer .box-container {
+            display: -ms-grid;
+            display: grid;
+            -ms-grid-columns: (minmax(10rem, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(10rem, 1fr));
+            gap: 1.5rem;
+            text-align: left;
+            padding: 1rem 0;
+        }
+
+        .footer .box-container .box h3 {
+            font-size: 1.5rem;
+            color: #fff;
+            padding: 0.5rem 0;
+            text-transform: capitalize;
+        }
+
+        .footer .box-container .box p {
+            font-size: 1rem;
+            color: #fff;
+            padding-bottom: .2rem;
+            text-transform: capitalize;
+        }
+
+        .footer .box-container .box a {
+            text-decoration: none;
+            font-size: 1rem;
+            color: #fff;
+            padding: 0.4rem 0;
+            display: block;
+            text-transform: capitalize;
+        }
+
+        .footer .box-container .box a:hover {
+            color: #FCB200;
+        }
+
+        .footer .box-container .box a:hover i {
+            padding-right: 1rem;
+
+        }
+
+        .footer .box-container .box a i {
+            padding-right: .5rem;
+            color: #FCB200;
+        }
+
+
+        .footer .box-container .box .submit {
+            text-transform: capitalize;
+            font-size: 1rem;
+            color: #222;
+            text-transform: none;
+            display: flex;
+        }
+
+        .footer .box-container .box img {
+            margin: 0.5rem 0;
+        }
+
+        .submit-mail {
+            text-transform: capitalize;
+            font-size: 1rem;
+            padding-left: 0.0rem;
+            color: #222;
+            border-top-left-radius: 40px;
+            border-bottom-left-radius: 40px;
+            border: 2px solid #FCB200;
+        }
+
+        .submit-btn {
+            display: flex;
+            text-transform: capitalize;
+            padding: .5rem 0rem;
+            font-size: 1rem;
+            border: 1px solid #FCB200;
+            border-top-right-radius: 40px;
+            border-bottom-right-radius: 40px;
+            background-color: #FCB200;
+            color: #1F2024;
+
+        }
+
+        .span {
+            margin-right: 0.5rem;
+        }
+
+
+        .footer .btn:hover {
+            background-color: #666;
+            color: #fff;
+        }
+
+        .footer .box-container .box .payment {
+            width: 100%;
+            margin-top: 1rem;
+        }
+
+        .credit {
+            text-align: center;
+            text-transform: capitalize;
+            background: black;
+            color: #fff;
+            font-size: 1.2rem;
+            padding: 1.6rem;
+        }
+        .textre{
+            color: white;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="overflow">
+        <nav class="navbar fixed-top navbar-expand-lg navbar-light">
+            <div class="container-fluid">
+                <a class="navbar-brand" href="/shop/">
+                    <img src="{% static '/log.png' %}" height="100px" />
+                </a>
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <div class="offset-lg-1 col-lg-9">
+                        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                            <li class="nav-item">
+                                <a class="nav-link active" aria-current="page" href="/shop/"><b>HOME</b></a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link active" href="/shop/about/"><b>ABOUT US</b></a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link active" href="/shop/shop/"><b>SHOP</b></a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link active" href="/shop/contact/"><b>CUSTOMER CARE</b></a>
+                            </li>
+                            <button type="button" class="btn btn-primary mx-2" id="popcart" data-container="body" data-toggle="popover" data-placement="bottom" data-html="true" data-content="Vivamus
+                            sagittis lacus vel augue laoreet rutrum faucibus.">
+                              Cart(<span id="cart">0</span>)
+                            </button>
+                            <form class="d-flex" method="get " action="/shop/search/" role="search">
+                                <input class="form-control me-2" type="search" placeholder="Search" name="search" id="search" aria-label="Search">
+                                <button class="btn btn-outline-primary" id="qr{{i.id}}" type="submit">Search</button>
+                              </form>                        
+                        </ul>
+                    </div>
+                    <div class="offset-lg-0 col-lg-4">
+                        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                            {% if user.is_authenticated %}
+                            <div class="navbar-nav ml-auto">
+                                <a href="/shop/account/">
+                                    <span class="hello-msg"><img src="{% static '/user.png' %}"
+                                            height="20px" />{{request.user}} </span>
+                                </a>
+                                <span><a class="hello-msg" href="{% url 'logout' %}">Logout</a></span>
+                            </div>
+                            {% else %}
+                            <a href="/shop/register/" class="link">
+                                <p>
+                                    Register
+                                </p>
+                            </a>
+                            <a href="/shop/login/" class="link">
+                                <p>
+                                    Log in
+                                </p>
+                            </a>
+                            {% endif %}
+                        </ul>
+                    </div><br>
+                </div>
+            </div>
+        </nav>
+    </div>
+    <div><br><br><br>
+        {% block body %} {% endblock body %}
+    </div>
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js"
+        integrity="sha384-wHAiFfRlMFy6i5SRaxvfOCifBUQy1xHdJ/yoi7FRNXMRBu5WHdZYu1hA6ZOblgut"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js"
+        integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k"
+        crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js"
+        integrity="sha384-wHAiFfRlMFy6i5SRaxvfOCifBUQy1xHdJ/yoi7FRNXMRBu5WHdZYu1hA6ZOblgut"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js"
+        integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k"
+        crossorigin="anonymous"></script>
+    {% block js %}
+    <script>
+        if (localStorage.getItem('cart') == null) {
+          var cart = {};
+        } else {
+          cart = JSON.parse(localStorage.getItem('cart'));
+          updateCart(cart);
+        }
+        $('.divpr').on('click', 'button.cart', function () {
+          var idstr = this.id.toString();
+          if (cart[idstr] != undefined) {
+            qty = cart[idstr][0] + 1;
+    
+          } else {
+            qty = 1;
+            name = document.getElementById('name' + idstr).innerHTML
+            cart[idstr] = [qty, name];
+    
+          }
+          updateCart(cart);
+        });
+        $('#popcart').popover();
+        updatePopover(cart);
+    
+        function updatePopover(cart) {
+          console.log('We are inside updatePopover');
+          var popStr = "";
+          popStr = popStr + "<h5> Cart for your items in my shopping cart </h5><div class='mx-2 my-2'>";
+          var i = 1;
+          for (var item in cart) {
+            popStr = popStr + "<b>" + i + "</b>. ";
+            popStr = popStr + document.getElementById('name' + item).innerHTML.slice(0, 19) + "... Qty: " + cart[item][0] + '<br>';
+            i = i + 1;
+          }
+          popStr = popStr + "</div> <a href='/shop/checkout'><button class='btn btn-primary' id ='checkout'>Checkout</button></a> <button class='btn btn-primary' onclick='clearCart()' id ='clearCart'>Clear Cart</button>     "
+          console.log(popStr);
+          document.getElementById('popcart').setAttribute('data-content', popStr);
+          $('#popcart').popover();
+        }
+    
+        function clearCart() {
+          cart = JSON.parse(localStorage.getItem('cart'));
+          for (var item in cart) {
+            document.getElementById('div' + item).innerHTML = '<button id="' + item + '" class="btn btn-primary cart">Add To Cart</button>'
+          }
+          localStorage.clear();
+          cart = {};
+          updateCart(cart);
+        }
+    
+        function updateCart(cart) {
+          var sum = 0;
+          for (var item in cart) {
+            sum = sum + cart[item][0];
+            document.getElementById('div' + item).innerHTML = "<button id='minus" + item + "' class='btn btn-primary minus'>-</button> <span id='val" + item + "''>" + cart[item][0] + "</span> <button id='plus" + item + "' class='btn btn-primary plus'> + </button>";
+          }
+          localStorage.setItem('cart', JSON.stringify(cart));
+          document.getElementById('cart').innerHTML = sum;
+          console.log(cart);
+          updatePopover(cart);
+        }
+        $('.divpr').on("click", "button.minus", function () {
+          a = this.id.slice(7,);
+          cart['pr' + a][0] = cart['pr' + a][0] - 1;
+          cart['pr' + a][0] = Math.max(0, cart['pr' + a][0]);
+          document.getElementById('valpr' + a).innerHTML = cart['pr' + a][0];
+          updateCart(cart);
+        });
+        $('.divpr').on("click", "button.plus", function () {
+          a = this.id.slice(6,);
+          cart['pr' + a][0] = cart['pr' + a][0] + 1;
+          document.getElementById('valpr' + a).innerHTML = cart['pr' + a][0];
+          updateCart(cart);
+        });
+      </script>
+    {% endblock %}
+</body>
+
+<section class="footer">
+
+    <div class="box-container container">
+
+        <div class="box">
+            <h3>quick links</h3>
+            <a href="home.html"> <i class="fas fa-arrow-right"></i> home</a>
+            <a href="shop.html"> <i class="fas fa-arrow-right"></i> shop</a>
+            <a href="orderReview.html"> <i class="fas fa-arrow-right"></i>order review</a>
+
+            <a href="contact.html"> <i class="fas fa-arrow-right"></i> contact</a>
+        </div>
+
+        <div class="box">
+            <h3>extra links</h3>
+            <a href="orderReview.html"> <i class="fas fa-arrow-right"></i> my order </a>
+            <a href="wishlist.html"> <i class="fas fa-arrow-right"></i> my favorite </a>
+            <a href="wishlist.html"> <i class="fas fa-arrow-right"></i> my wishlist </a>
+            <a href="login.html"> <i class="fas fa-arrow-right"></i> my account </a>
+            <a href="help.html"> <i class="fas fa-arrow-right"></i> help </a>
+        </div>
+
+        <div class="box">
+            <h3>follow us</h3>
+            <a href="#"> <i class="fab fa-facebook-f"></i> facebook </a>
+            <a href="#"> <i class="fab fa-twitter"></i> twitter </a>
+            <a href="#"> <i class="fab fa-instagram"></i> instagram </a>
+            <a href="#"> <i class="fab fa-linkedin"></i> linkedin </a>
+            <a href="#"> <i class="fab fa-pinterest"></i> pinterest </a>
+        </div>
+
+        <div class="box">
+
+            <h3>newsletter</h3>
+            <p>subscribe for latest updates</p>
+
+            <div class="submit">
+                <input type="email" value="" placeholder="Your email address" name="contact[email]"
+                    class="submit-mail" aria-label="Your email address" required="required" />
+                <input type="hidden" name="contact[tags]" value="newsletter" />
+                <button type="submit" class="submit-btn" name="subscribe" value=""><small
+                        class="span">Submit</small><i class=" fa fa-paper-plane"></i></button>
+            </div>
+            
+        </div>
+    </div>
+</section>
+
+</html>
